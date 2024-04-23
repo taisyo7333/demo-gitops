@@ -3,6 +3,8 @@ kind: ClusterLogging
 metadata:
   name: instance
   namespace: openshift-logging
+  labels:
+    app.kubernetes.io/instance: cluster-logging
 spec:
   logStore:
     type: lokistack
@@ -36,6 +38,8 @@ kind: ClusterLogForwarder
 metadata:
   name: instance
   namespace: openshift-logging
+  labels:
+    app.kubernetes.io/instance: cluster-logging
 spec:
  pipelines:
  - inputRefs:
